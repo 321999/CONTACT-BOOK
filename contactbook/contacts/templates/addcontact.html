@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block base %}
+<a href="/ShowMyTask/" class="btn btn-secondary">Show My Tasks</a>
+
+<main class="mt-4">
+    <form method="post" class="col-md-6 mx-auto border p-3 rounded bg-light">
+        <!-- To send the data from frontend to backend -->
+        {% csrf_token %}
+
+        <!-- Name of the people -->
+        <div class="mb-3">
+            <label for="NameOfPeople" class="form-label">Name</label>
+            <input type="text" name="NameOfPeople" class="form-control" id="timestamp" required>
+        </div>
+
+        <!-- Phone number of the people -->
+        <div class="mb-3">
+            <label for="PhoneNumberOfPeople" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" maxlength="10" id="TitleOfTheTask" name="Title" required>
+        </div>
+
+        <!-- To store email of the person -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="dueDate">
+        </div>
+
+        <!-- To store the address -->
+        <div class="mb-3">
+            <label for="Address" class="form-label">Address</label>
+            <textarea class="form-control" maxlength="100" name="Address" placeholder="Enter your address here"
+                id="addressTextarea"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</main>
+{% endblock %}
