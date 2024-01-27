@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block base %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Srno</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+
+            <th colspan="2" style="text-align:center; background-color: aqua;" scope="col">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for value in data %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{value.name}}</td>
+            <td>{{value.phone_number}}</td>
+            <td>{{value.email}}</td>
+            <td>{{value.address}}</td>
+
+            <!-- For updating the record, we have used id to know for particular records only we have to modify the value  -->
+            <td scope="col"><button type="button" class="btn btn-primary"><a href="/update_contact/{{value.id}}"
+                        style="color: white;"> UPDATE</a></button></td>
+
+            <!-- For deleting the record -->
+            <td scope="col"><button type="button" class="btn btn-danger"><a style="color: white;"
+                        href="/delete_contact/{{value.id}}">DELETE</a></button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
+
+
+<!-- View Contact List: Display a list of all saved contacts with names and phone numbers. -->
