@@ -12,7 +12,7 @@ class ContactInformation(models.Model):
     name=models.CharField(max_length=50)
 
     # To store the phone numbers as we know phone number is only of 10 digit 
-    phone_number=models.CharField(max_length=10)
+    phone_number = models.CharField(max_length=10, default='0000000000')
 
     # To store the email 
     email=models.EmailField()

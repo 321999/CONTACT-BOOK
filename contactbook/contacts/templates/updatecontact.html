@@ -11,26 +11,27 @@
         <!-- Name of the people -->
         <div class="mb-3">
             <label for="NameOfPeople" class="form-label">Name</label>
-            <input type="text" name="NameOfPeople" class="form-control" id="timestamp" required>
+            <input type="text" name="NameOfPeople" value="{{backend_data.name}}" class="form-control" id="timestamp">
         </div>
 
         <!-- Phone number of the people -->
         <div class="mb-3">
             <label for="PhoneNumberOfPeople" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" maxlength="10" id="TitleOfTheTask" name="Title" required>
+            <input type="tel" class="form-control" value="{{backend_data.phone_number}}" maxlength="10"
+                id="TitleOfTheTask" name="PhoneNumberOfPeople">
         </div>
 
         <!-- To store email of the person -->
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="dueDate">
+            <input type="email" name="email" value="{{backend_data.emai}}" class="form-control" id="dueDate">
         </div>
 
         <!-- To store the address -->
         <div class="mb-3">
             <label for="Address" class="form-label">Address</label>
-            <textarea class="form-control" maxlength="100" name="Address" placeholder="Enter your address here"
-                id="addressTextarea"></textarea>
+            <textarea class="form-control" maxlength="100" name="Address" value="{{backend_data.address}}"
+                placeholder="Enter your address here" id="addressTextarea"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
