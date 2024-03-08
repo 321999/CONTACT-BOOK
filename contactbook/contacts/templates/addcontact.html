@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
 {% block base %}
+
+<style>
+    #mb-3 {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        /* Adjust the gap based on your preference */
+    }
+
+    #mb-3 input {
+        flex: 1;
+    }
+</style>
+
 <a href="/ShowMyTask/" class="btn btn-secondary">Show My Tasks</a>
 
 <main class="mt-4">
@@ -27,10 +41,11 @@
         </div>
 
         <!-- To store the address -->
-        <div class="mb-3">
+        <div class="mb-3" id="mb-3">
             <label for="Address" class="form-label">Address</label>
-            <textarea class="form-control" maxlength="100" name="Address" placeholder="Enter your address here"
-                id="addressTextarea"></textarea>
+            <input class="form-control" name="Address" type="text" placeholder="State">
+            <input class="form-control" type="Address" name="city" placeholder="Enter the city">
+            <!-- <input class="form-control" type="text" name="pincode" pattern="[0-9]+" placeholder="Pincode"> -->
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

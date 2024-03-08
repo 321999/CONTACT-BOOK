@@ -8,6 +8,9 @@ def add_contact(request):
     print("adding the details")
     if request.method=="POST":
         data=request.POST
+
+    
+        
         # storing  the data to db
         ContactInformation.objects.create(
     # To store the name
@@ -33,7 +36,7 @@ def show_contact(request):
     # print("*"*10)
     if request.GET.get("contact_search"):
         data=data.filter(name__icontains=request.GET.get("contact_search"))
-        print("*"*5+request.GET.get("contact_search"))
+        print("*"*5+request.GET.get("contact_search"))             
     # To show send the data from backend to frontend we use context keyword 
     return render(request,"displaycontact.html",context={"data":data})
     # return  HttpResponse("completing the projgrje")
@@ -57,9 +60,6 @@ def update_contact(request,id):
         else:
             return HttpResponseBadRequest("Invalid phone number format")
 
-        record_to_be_update.save()
-
-        return redirect("/show_contact/")
     return render(request,"updatecontact.html",context={"backend_data":record_to_be_update})
 
 
@@ -91,10 +91,14 @@ def update_contact(request,id):
 
 
 def delete_contact(request,id):
-    record_to_be_delete=ContactInformation.objects.get(id=id)
+    record_to_be_delete=ContactInformation.objects.get(id=id)  
+    print("the id of which location is added is",record_to_be_delete)    
 
-    record_to_be_delete.delete()
-    return redirect(request,"/show_contact/")
+    record_to_be_delete.delete() 
+    # print("deleted the record")  
+    # record_to_be_delete.save()
+    return redirect("/show_contact/")
+    # return HttpResponse("object deleted")     
 
 def home_page(request):
     return render(request,"home.html")

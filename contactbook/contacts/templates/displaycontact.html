@@ -37,8 +37,13 @@
                         style="color: white;"> UPDATE</a></button></td>
 
             <!-- For deleting the record -->
-            <td scope="col"><button type="button" class="btn btn-danger"><a style="color: white;"
-                        href="/delete_contact/{{value.id}}">DELETE</a></button></td>
+            <td scope="col">
+                <a href="/delete_contact/{{ value.id }}" class="btn btn-danger" style="color: white;">DELETE</a>
+            </td>
+
+            <!-- 
+            <td scope="col"><button type="button" class="btn btn-danger"><a href="/delete_contact/{{ value.id }}"
+                        class="btn btn-danger" style="color: white;">DELETE</a></button></td> -->
         </tr>
         {% endfor %}
     </tbody>

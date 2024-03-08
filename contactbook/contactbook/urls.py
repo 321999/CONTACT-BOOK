@@ -22,9 +22,10 @@ from contacts.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add_contact/',add_contact,name="add_contact"),
-    path("show_contact/",show_contact,name="show_contact"),
-    path("update_contact/<id>",update_contact,name="update_contact"),
+
+    path("update_contact/<id>/",update_contact,name="update_contact"),
     path("delete_contact/<id>",delete_contact,name="delete_contact"),
+    path("show_contact/",show_contact,name="show_contact"),
     path("",home_page,name="home_page")
 
 ]
