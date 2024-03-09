@@ -9,8 +9,6 @@ def add_contact(request):
     if request.method=="POST":
         data=request.POST
 
-    
-        
         # storing  the data to db
         ContactInformation.objects.create(
     # To store the name
